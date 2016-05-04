@@ -2,7 +2,7 @@
 //  Track.swift
 //  SwiftPlayer
 //
-//  Created by Abdullah Obaied on 4/17/16.
+//  Created by Abdullah Joseph on 4/17/16.
 //
 
 class Track {

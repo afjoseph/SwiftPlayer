@@ -2,7 +2,7 @@
 //  Utils.swift
 //  SwiftPlayer
 //
-//  Created by Abdullah Obaied on 3/24/16.
+//  Created by Abdullah Joseph on 3/24/16.
 //
 
 import Foundation
