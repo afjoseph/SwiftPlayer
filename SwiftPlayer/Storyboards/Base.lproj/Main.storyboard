@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5fr-F0-7iz">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Track Table View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" userLabel="Track Table View Controller" customClass="TrackTableViewController" customModule="SwiftPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="sZH-Hd-Kpy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackTableViewCell" rowHeight="200" id="8Gg-Ym-vx8" customClass="TrackTableViewCell" customModule="SwiftPlayer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Gg-Ym-vx8" id="4Zx-tu-abe">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="199.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GfA-Wy-cqr" userLabel="img_cover">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="199.5"/>
+                                        </imageView>
+                                        <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="znN-Qu-n8j" userLabel="img_overlay">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="199.5"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
+                                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_play" translatesAutoresizingMaskIntoConstraints="NO" id="nnK-U8-IeK" userLabel="btn_play">
+                                            <rect key="frame" x="247.5" y="47.5" width="105" height="105"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="nnK-U8-IeK" secondAttribute="height" multiplier="1:1" id="wFU-Lj-ljv"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="znN-Qu-n8j" firstAttribute="leading" secondItem="4Zx-tu-abe" secondAttribute="leading" id="JtA-mB-ah9"/>
+                                        <constraint firstItem="nnK-U8-IeK" firstAttribute="centerY" secondItem="4Zx-tu-abe" secondAttribute="centerY" id="Pgy-SX-bgE"/>
+                                        <constraint firstItem="GfA-Wy-cqr" firstAttribute="leading" secondItem="4Zx-tu-abe" secondAttribute="leading" id="XVr-Fw-CGx"/>
+                                        <constraint firstItem="nnK-U8-IeK" firstAttribute="centerX" secondItem="4Zx-tu-abe" secondAttribute="centerX" id="ZQ5-eb-afI"/>
+                                        <constraint firstAttribute="bottom" secondItem="GfA-Wy-cqr" secondAttribute="bottom" id="btJ-3u-IGG"/>
+                                        <constraint firstItem="znN-Qu-n8j" firstAttribute="top" secondItem="4Zx-tu-abe" secondAttribute="top" id="dxW-bT-duI"/>
+                                        <constraint firstAttribute="trailing" secondItem="znN-Qu-n8j" secondAttribute="trailing" id="jrU-3n-5KC"/>
+                                        <constraint firstAttribute="bottom" secondItem="znN-Qu-n8j" secondAttribute="bottom" id="kcj-V5-T2Z"/>
+                                        <constraint firstItem="GfA-Wy-cqr" firstAttribute="top" secondItem="4Zx-tu-abe" secondAttribute="top" id="oVz-to-Ovt"/>
+                                        <constraint firstAttribute="trailing" secondItem="GfA-Wy-cqr" secondAttribute="trailing" id="uN5-nh-XUM"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="img_cover" destination="GfA-Wy-cqr" id="Upi-sh-W4n"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="SwiftPlayer" id="ZRr-4i-4zS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="uCf-Wm-hBC" userLabel="Reload Data">
+                            <connections>
+                                <action selector="onClick_btn_reloadData" destination="BYZ-38-t0r" id="zJm-Un-Rjw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="sZH-Hd-Kpy" id="AeM-Gr-bLz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1949" y="360"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cws-Jg-dut">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5fr-F0-7iz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Aga-i3-osM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1WE-65-hFM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="frJ-f2-ufG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1137" y="360"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="img_play" width="105" height="105"/>
+    </resources>
+</document>
